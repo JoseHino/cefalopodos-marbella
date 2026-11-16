@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cuántos calamares, chocos o pulpos se pueden pescar con caña en Marbella según la norma vigente.">
+<title>Cefalópodos con caña en Marbella</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: póster vertical; respuesta grande arriba, mapa de la línea de base, dos columnas interiores/exteriores, letra pequeña al pie */
+:root{
+  --bg:#f3f6f7; --panel:#ffffff; --fg:#13232b; --muted:#56707c; --line:#d3dde1;
+  --sea:#cfe3ea; --land:#e9e2d2; --base:#0d5c7a;
+  --no:#c2362b; --no-bg:#fbe7e4; --si:#1d7a4c; --si-bg:#e2f3ea; --duda:#a86a00; --duda-bg:#fbf0d9;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e171b; --panel:#15232a; --fg:#e6eef1; --muted:#97adb6; --line:#2a3b43;
+  --sea:#13313d; --land:#2b2a24; --base:#5fc0e3;
+  --no:#ff7b6e; --no-bg:#3a1b18; --si:#5fd39a; --si-bg:#13301f; --duda:#f1b84a; --duda-bg:#33280f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e171b; --panel:#15232a; --fg:#e6eef1; --muted:#97adb6; --line:#2a3b43;
+  --sea:#13313d; --land:#2b2a24; --base:#5fc0e3;
+  --no:#ff7b6e; --no-bg:#3a1b18; --si:#5fd39a; --si-bg:#13301f; --duda:#f1b84a; --duda-bg:#33280f; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:880px;margin:0 auto;padding-block:28px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+.eyebrow{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;margin:.2em 0 .1em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:1.6rem;margin:0;line-height:1.1}
+p{margin:0}
+.lead{color:var(--muted);max-width:62ch}
+.answer{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--no-bg);border:2px solid var(--no);border-radius:14px;padding:18px 20px}
+.big{font-family:var(--display);font-weight:800;font-size:clamp(5rem,16vw,8rem);line-height:.85;color:var(--no);font-variant-numeric:tabular-nums}
+.answer strong{font-size:1.2rem;display:block;margin-bottom:4px}
+.map{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px}
+.mapbox{overflow-x:auto}
+svg{display:block;width:100%;min-width:560px;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:22px;height:12px;border-radius:2px;display:inline-block}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:680px){.cols{grid-template-columns:1fr}.answer{grid-template-columns:1fr}}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px;align-content:start;min-width:0}
+.who{font-size:.9rem;color:var(--muted)}
+.rows{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:8px}
+.row.no{background:var(--no-bg)} .row.si{background:var(--si-bg)} .row.duda{background:var(--duda-bg)}
+.pill{font-weight:700;font-size:.85rem;padding:2px 10px;border-radius:99px;white-space:nowrap}
+.no .pill{color:var(--no);border:1.5px solid var(--no)} .si .pill{color:var(--si);border:1.5px solid var(--si)} .duda .pill{color:var(--duda);border:1.5px solid var(--duda)}
+.sp{font-weight:600} .sp em{font-weight:400;color:var(--muted);font-style:italic;font-size:.9rem}
+.note{font-size:.92rem;color:var(--muted)}
+.warn{background:var(--duda-bg);border-left:4px solid var(--duda);border-radius:0 10px 10px 0;padding:14px 16px;display:grid;gap:6px}
+.warn b{color:var(--duda)}
+.checks{display:grid;gap:6px;padding-left:1.1em;margin:0}
+.src{font-size:.85rem;color:var(--muted);display:grid;gap:4px}
+.src a{color:var(--base)}
+a:focus-visible{outline:2px solid var(--base);outline-offset:2px}
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Pesca recreativa · Marbella (Málaga) · situación a 16 de noviembre de 2026</p>
+    <h1>¿Cuántos cefalópodos puedo pescar con caña en Marbella?</h1>
+    <p class="lead">Depende de a qué lado de una línea invisible estés. Casi toda la franja costera de Marbella son <b>aguas interiores</b> y ahí manda la Junta de Andalucía. Más allá de esa línea son <b>aguas exteriores</b> y manda el Estado.</p>
+  </header>
+
+  <section class="answer" aria-label="Respuesta corta">
+    <div class="big">0</div>
+    <div>
+      <strong>Desde la orilla, el espigón o el puerto, y con barco cerca de costa: ninguno.</strong>
+      <p>Al anularse el Decreto andaluz de 2023, la Junta vuelve a aplicar el Decreto 361/2003, que prohíbe a los recreativos capturar cefalópodos (calamar, choco, pulpo) en aguas interiores.</p>
+    </div>
+  </section>
+
+  <section class="map" aria-label="Mapa de la línea de base recta frente a Marbella">
+    <h2>Dónde está la línea</h2>
+    <p class="note">Línea de base recta del Real Decreto 2510/1977: Punta de Baños → Torre de Calahonda → Punta de Calaburras. Frente al puerto de Marbella queda a unos 4 km de la orilla (unas 2 millas); frente a Puerto Banús, a unos 2 km.</p>
+    <div class="mapbox"><svg id="mapa" viewBox="0 0 900 330" role="img" aria-label="Costa de Estepona a Fuengirola con la línea de base recta trazada mar adentro"></svg></div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--no-bg);border:1px solid var(--no)"></i>Aguas interiores: Junta de Andalucía</span>
+      <span><i class="sw" style="background:var(--sea)"></i>Aguas exteriores: Estado</span>
+      <span><i class="sw" style="background:var(--base)"></i>Línea de base recta</span>
+    </div>
+  </section>
+
+  <section class="cols">
+    <article class="col">
+      <h2>Dentro de la línea</h2>
+      <p class="who">Aguas interiores · Junta de Andalucía · Decreto 361/2003</p>
+      <div class="rows">
+        <div class="row no"><span class="sp">Calamar <em>Loligo</em></span><span class="pill">0</span></div>
+        <div class="row no"><span class="sp">Choco o sepia <em>Sepia</em></span><span class="pill">0</span></div>
+        <div class="row no"><span class="sp">Pulpo <em>Octopus</em></span><span class="pill">0</span></div>
+      </div>
+      <p class="note">Aquí está toda la pesca desde tierra de Marbella y la mayor parte de la pesca desde barco cerca de costa.</p>
+    </article>
+
+    <article class="col">
+      <h2>Fuera de la línea</h2>
+      <p class="who">Aguas exteriores · Estado · Real Decreto 347/2011</p>
+      <div class="rows">
+        <div class="row si"><span class="sp">Calamar <em>Loligo</em></span><span class="pill">Sí</span></div>
+        <div class="row si"><span class="sp">Choco o sepia, choquito <em>Sepia</em></span><span class="pill">Sí</span></div>
+        <div class="row si"><span class="sp">Volador, pota <em>Illex, Todarodes</em></span><span class="pill">Sí</span></div>
+        <div class="row duda"><span class="sp">Pulpo <em>Octopus</em></span><span class="pill">Mejor no</span></div>
+      </div>
+      <p class="note">No hay un número de piezas. Cuenta el tope general de unos <b>5 kg por persona y día</b> (Orden de 26-02-1999, que sigue aplicándose por la transitoria del RD 347/2011). Solo desde barco con licencia de embarcación. Aparejos: caña, línea de mano, potera, curricán. El pulpo figura en el anexo estatal, pero las guías de pesca lo dan por no permitido; no lo he podido confirmar en el BOE.</p>
+    </article>
+  </section>
+
+  <section class="warn">
+    <p><b>Un asunto pendiente de confirmar.</b> El TSJA anuló el Decreto 205/2023 (sentencia de 2 de diciembre de 2025, recurso de Pesca Responsable Al-Andalus). Ese decreto permitía hasta <b>6 calamares o chocos por licencia y día</b> en aguas interiores y prohibía el pulpo.</p>
+    <p>En diciembre de 2025 la Consejería dijo que el decreto de 2023 seguía vigente hasta que la sentencia fuera firme. En 2026 la propia Junta ya trata el decreto como anulado y ha vuelto a las licencias del Decreto 361/2003. No he encontrado ninguna noticia de un recurso de casación ante el Supremo ni de un decreto nuevo. Antes de salir, conviene confirmarlo con la Delegación de Pesca en Málaga.</p>
+  </section>
+
+  <section class="col" style="border-radius:14px">
+    <h2>Si pescas fuera de la línea</h2>
+    <ul class="checks">
+      <li>Licencia andaluza de pesca desde embarcación (12,52 € en 2026).</li>
+      <li>Nada de venderlo: las capturas recreativas no pueden venderse ni cederse con fin comercial.</li>
+      <li>Ten cerca la posición: frente a Marbella, la línea queda entre 2 y 4 km de la playa. Si dudas, estás dentro.</li>
+    </ul>
+  </section>
+
+  <footer class="src">
+    <p><b>Fuentes</b></p>
+    <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-1977-23967">Real Decreto 2510/1977, líneas de base rectas (BOE)</a>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-6099">Real Decreto 347/2011, pesca de recreo en aguas exteriores, consolidado a 19-03-2026 (BOE)</a>
+    <a href="https://www.juntadeandalucia.es/boja/2023/169/1">Decreto 205/2023, aguas interiores de Andalucía (BOJA, anulado)</a>
+    <a href="https://www.juntadeandalucia.es/organismos/economiahaciendayfondoseuropeos/areas/tributos-juego/tributos/paginas/cuotatrib_licenciapesca.html">Junta de Andalucía: tasas de licencias 2026 y efecto de la anulación</a>
+    <a href="https://pescahuelva.com/varapalo-judicial-a-la-junta-el-tsja-anula-el-decreto-de-pesca-recreativa-tras-el-recurso-de-pesca-responsable-al-andalus/">Pesca Huelva: el TSJA anula el decreto (9-12-2025)</a>
+    <a href="https://pescahuelva.com/reves-para-la-pesca-recreativa-en-andalucia-la-anulacion-del-decreto-205-2023-reactiva-la-prohibicion-de-capturar-cefalopodos-en-aguas-interiores/">Pesca Huelva: vuelve la prohibición de cefalópodos en aguas interiores (11-12-2025)</a>
+    <a href="https://www.cursospesca.com/2025/12/">Cursospesca: respuesta de la Consejería sobre la firmeza (18-12-2025)</a>
+    <a href="https://sede.carm.es/web/procedimiento/1865">Región de Murcia: tope de 5 kg por persona y día en aguas exteriores</a>
+    <p>Infografía orientativa. No sustituye a la consulta con la Administración. Distancias medidas sobre las coordenadas del BOE, aproximadas.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const W=900,H=330,lon0=-5.12,lon1=-4.60,lat0=36.415,lat1=36.565;
+  const X=l=>(l-lon0)/(lon1-lon0)*W, Y=a=>(lat1-a)/(lat1-lat0)*H;
+  const P=pts=>pts.map(([lo,la])=>X(lo).toFixed(1)+','+Y(la).toFixed(1)).join(' ');
+  // costa aproximada (lon, lat) de oeste a este
+  const coast=[[-5.12,36.432],[-5.08,36.443],[-5.05,36.452],[-5.0058,36.4602],[-4.985,36.472],[-4.953,36.484],[-4.93,36.49],[-4.90,36.500],[-4.886,36.507],[-4.86,36.506],[-4.83,36.503],[-4.80,36.497],[-4.770,36.492],[-4.745,36.488],[-4.71,36.4887],[-4.675,36.496],[-4.6383,36.5083],[-4.625,36.53],[-4.615,36.55],[-4.61,36.565]];
+  // línea de base (RD 2510/1977)
+  const carbonera=[-5.30,36.245], banos=[-5.0058,36.4602], calahonda=[-4.71,36.4887], calaburras=[-4.6383,36.5083], velez=[-4.1033,36.7267];
+  const at=(a,b,lon)=>a[1]+(lon-a[0])/(b[0]-a[0])*(b[1]-a[1]);
+  const base=[[lon0,at(carbonera,banos,lon0)],banos,calahonda,calaburras,[lon1,at(calaburras,velez,lon1)]];
+  const land=P(coast)+' '+X(lon1)+',0 '+X(lon0)+',0';
+  // aguas interiores = entre costa y línea
+  const inner=P(coast)+' '+P(base.slice().reverse());
+  const s=document.getElementById('mapa');
+  const css=v=>`var(${v})`;
+  let h=`<rect width="${W}" height="${H}" fill="${css('--sea')}"/>`;
+  h+=`<polygon points="${inner}" fill="${css('--no-bg')}" stroke="none"/>`;
+  h+=`<polygon points="${land}" fill="${css('--land')}" stroke="${css('--muted')}" stroke-width="1"/>`;
+  h+=`<polyline points="${P(base)}" fill="none" stroke="${css('--base')}" stroke-width="3" stroke-dasharray="10 6"/>`;
+  // término municipal aproximado
+  const tm0=X(-5.03), tm1=X(-4.735);
+  h+=`<line x1="${tm0}" y1="${Y(36.56)}" x2="${tm1}" y2="${Y(36.56)}" stroke="${css('--fg')}" stroke-width="1.5"/>`;
+  h+=`<line x1="${tm0}" y1="${Y(36.56)}" x2="${tm0}" y2="${Y(36.552)}" stroke="${css('--fg')}" stroke-width="1.5"/><line x1="${tm1}" y1="${Y(36.56)}" x2="${tm1}" y2="${Y(36.552)}" stroke="${css('--fg')}" stroke-width="1.5"/>`;
+  h+=`<text x="${(tm0+tm1)/2}" y="${Y(36.56)+18}" text-anchor="middle" font-size="14" font-weight="700" fill="${css('--fg')}">Término municipal de Marbella (aprox.)</text>`;
+  const pts=[['Puerto Banús',-4.953,36.484],['Marbella',-4.886,36.507],['Cabopino',-4.745,36.488],['Estepona',-5.09,36.44],['Fuengirola',-4.625,36.535]];
+  pts.forEach(([n,lo,la])=>{h+=`<circle cx="${X(lo)}" cy="${Y(la)}" r="3.5" fill="${css('--fg')}"/><text x="${X(lo)+5}" y="${Y(la)-7}" font-size="13" fill="${css('--fg')}">${n}</text>`});
+  [['Punta de Baños',banos,-10,28],['Torre de Calahonda',calahonda,-60,26],['Pta. Calaburras',calaburras,-108,-34]].forEach(([n,[lo,la],dx,dy])=>{
+    h+=`<circle cx="${X(lo)}" cy="${Y(la)}" r="5" fill="${css('--base')}"/><text x="${X(lo)+dx}" y="${Y(la)+dy}" font-size="12.5" font-weight="700" fill="${css('--base')}">${n}</text>`});
+  // cota frente al puerto de Marbella
+  const yl=Y(at(banos,calahonda,-4.886));
+  h+=`<line x1="${X(-4.886)}" y1="${Y(36.507)+4}" x2="${X(-4.886)}" y2="${yl-3}" stroke="${css('--no')}" stroke-width="1.5" marker-end="url(#a)" marker-start="url(#a)"/>`;
+  h+=`<text x="${X(-4.886)+6}" y="${(Y(36.507)+yl)/2+5}" font-size="13" font-weight="700" fill="${css('--no')}">≈ 4 km</text>`;
+  h+=`<text x="${X(-4.86)}" y="${Y(36.462)+6}" font-size="13" fill="${css('--muted')}">línea de base recta</text>`;
+  h+=`<text x="${X(-4.95)}" y="${Y(36.43)}" font-size="15" font-weight="700" fill="${css('--muted')}">AGUAS EXTERIORES · Estado</text>`;
+  h+=`<text x="${X(-4.80)}" y="${Y(36.4855)}" font-size="12" font-weight="700" fill="${css('--no')}">interiores · Junta</text>`;
+  s.innerHTML=`<defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="${css('--no')}"/></marker></defs>`+h;
+})();
+</script>
+</body>
+</html>
