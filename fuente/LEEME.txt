@@ -1,0 +1,1 @@
+fuente/infografia_original.jpg es la imagen de Higgsfield sin el mapa real; mapa.py pega encima el mapa del término (termino.geojson) con la línea de base del RD 2510/1977.
